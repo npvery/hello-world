@@ -1,0 +1,22 @@
+import time
+
+print("Let's play a guessing game! Think of a whole number between 1 and 100, and I'll try to guess it.")
+time.sleep(2)
+print("Okay, let's go! Only type 'higher' or 'lower' if I'm wrong. If I'm right, type 'yes'!")
+time.sleep(2)
+guess = str(input("Is your number 50?"))
+first = 50
+
+for i in range(20):
+    if guess == 'higher':
+        first = first + (first / 2**(i+1))
+        guess = input("Is your number %s?" %(first))
+    elif guess == 'lower':
+        first = first - (first / 2**(i+1))
+        guess = input("Is your number %s?" %(first))
+    elif guess == 'yes':
+        print("Got it!")
+        break
+    else:
+        print("Please type a valid response.")
+        
